@@ -1,8 +1,9 @@
+import presetMini from '@unocss/preset-mini'
 import presetWebFonts from '@unocss/preset-web-fonts'
 import {defineConfig} from 'unocss'
 
 export default defineConfig({
-    presets:[presetWebFonts({
+    presets: [presetMini(), presetWebFonts({
         provider: 'bunny', // Privacy-friendly Google Fonts alternative
         fonts: {
             // Extends default theme
