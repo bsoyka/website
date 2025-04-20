@@ -7,8 +7,8 @@
     <meta name="generator" content={Astro.generator}/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ben Soyka</title>
-    <script is:inline data-goatcounter="https://bsoyka.goatcounter.com/count" async
-            src="//gc.zgo.at/count.js"></script>
+    {import.meta.env.PROD && (<script is:inline data-goatcounter="https://bsoyka.goatcounter.com/count" async
+        src="//gc.zgo.at/count.js"></script>)}
 </head>
 <body class="bg-light color-dark font-sans">
 <slot />
