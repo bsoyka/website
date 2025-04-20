@@ -1,0 +1,12 @@
+---
+interface Props {
+    colSpan?: string;
+    rowSpan?: string;
+}
+
+const {colSpan, rowSpan} = Astro.props;
+---
+
+<div class:list={["max-w p-6 bg-white border border-gray-200 rounded-lg shadow-sm", colSpan || "col-span-1", rowSpan || "row-span-1"]}>
+    <slot/>
+</div>

@@ -1,7 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BentoCard from '../components/BentoCard.astro'
 ---
 
 <Layout>
-    <h1>Astro</h1>
+    <div class="grid grid-cols-4 grid-rows-4 grid-gap-4">
+        <BentoCard colSpan="col-span-3">
+            Intro
+        </BentoCard>
+        <BentoCard>
+            Computer science
+        </BentoCard>
+        <BentoCard rowSpan="row-span-2">
+            Photography
+        </BentoCard>
+        <BentoCard>
+            Volunteering
+        </BentoCard>
+        <BentoCard>
+            Academics
+        </BentoCard>
+        <BentoCard>
+            Writing
+        </BentoCard>
+        <BentoCard colSpan="col-span-2">
+            Fun facts
+        </BentoCard>
+        <BentoCard>
+            Legal
+        </BentoCard>
+    </div>
+
 </Layout>
