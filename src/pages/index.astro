@@ -4,14 +4,14 @@ import BentoCard from '../components/BentoCard.astro'
 ---
 
 <Layout>
-    <div class="grid grid-cols-4 grid-rows-4 grid-gap-4">
-        <BentoCard colSpan="col-span-3">
+    <div class="grid grid-cols-1 grid-gap-4 md:grid-cols-3 lg:grid-cols-4">
+        <BentoCard colSpan="md:col-span-3">
             Intro
         </BentoCard>
-        <BentoCard>
+        <BentoCard rowSpan="md:row-span-2 lg:row-span-1">
             Computer science
         </BentoCard>
-        <BentoCard rowSpan="row-span-2">
+        <BentoCard rowSpan="md:row-span-2">
             Photography
         </BentoCard>
         <BentoCard>
@@ -23,7 +23,7 @@ import BentoCard from '../components/BentoCard.astro'
         <BentoCard>
             Writing
         </BentoCard>
-        <BentoCard colSpan="col-span-2">
+        <BentoCard colSpan="lg:col-span-2">
             Fun facts
         </BentoCard>
         <BentoCard>
