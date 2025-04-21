@@ -1,12 +1,13 @@
-import presetWind4 from '@unocss/preset-wind4'
-import presetWebFonts from '@unocss/preset-web-fonts'
-import {defineConfig} from 'unocss'
+import {defineConfig, presetWebFonts, presetWind4} from 'unocss'
 
 export default defineConfig({
     presets: [presetWind4(), presetWebFonts({
         provider: 'bunny', // Privacy-friendly Google Fonts alternative
         fonts: {
-            sans: 'Space Grotesk'
+            sans: {
+                name: 'Space Grotesk',
+                weights: [300, 400, 500, 600, 700]
+            }
         },
     })],
     theme: {
