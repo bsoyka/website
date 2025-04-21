@@ -1,12 +1,15 @@
 ---
 interface Props {
+    title?: string;
     colSpan?: string;
     rowSpan?: string;
+    classes?: string;
 }
 
-const {colSpan, rowSpan} = Astro.props;
+const {title, colSpan, rowSpan, classes} = Astro.props;
 ---
 
-<div class:list={["max-w p-6 bg-white border border-gray-200 rounded-lg shadow-sm", colSpan || "col-span-1", rowSpan || "row-span-1"]}>
+<div class:list={["max-w p-6 bg-white border border-gray-200 rounded-lg shadow-sm", colSpan || "col-span-1", rowSpan || "row-span-1", classes]}>
+    {title && <h2 class="text-2xl font-bold">{title}</h2>}
     <slot/>
 </div>
