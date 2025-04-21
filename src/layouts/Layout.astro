@@ -14,3 +14,29 @@
 <slot />
 </body>
 </html>
+
+<style is:global lang="scss">
+  p + p {
+    margin-top: 0.75em;
+  }
+
+  a {
+    position: relative;
+    color: #507dbc !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0.1em;
+      background-color: #507dbc;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+</style>

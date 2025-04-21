@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@unocss/preset-wind4": "^66.1.0-beta.12",
+    "sass-embedded": "^1.86.3",
     "unocss": "^66.1.0-beta.12"
   }
 }
