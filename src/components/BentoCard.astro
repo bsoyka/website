@@ -13,3 +13,12 @@ const {title, colSpan, rowSpan, classes} = Astro.props;
     {title && <h2 class="text-2xl font-bold">{title}</h2>}
     <slot/>
 </div>
+
+<style>
+    h2 {
+        width: 100%;
+        border-bottom: #51b0bd solid 0.065em;
+        padding-bottom: 0.2em;
+        margin-bottom: 0.2em;
+    }
+</style>
