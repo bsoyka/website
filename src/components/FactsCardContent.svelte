@@ -2,7 +2,7 @@
     export let facts = [];
 
     let shuffledFacts = [];
-    let currentFact = "No facts available."; // Default fallback
+    let currentFacts = ["No facts available."];
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -11,27 +11,30 @@
         }
     }
 
-    function generateNewFact() {
-        if (shuffledFacts.length === 0) {
+    function generateNewFacts() {
+        if (shuffledFacts.length < 3) {
             shuffleArray(facts);
             shuffledFacts = [...facts];
         }
-        currentFact = shuffledFacts.pop(); // Get the next fact
+        currentFacts = shuffledFacts.splice(0, 3); // Get the next 3 facts
     }
 
     import {onMount} from "svelte";
 
     onMount(() => {
-        console.log("Received facts:", facts); // Debugging
         if (facts.length > 0) {
             shuffleArray(facts);
             shuffledFacts = [...facts];
-            currentFact = shuffledFacts.pop(); // Set the first fact
+            currentFacts = shuffledFacts.splice(0, 3); // Set the first 3 facts
         }
     });
 </script>
 
 <div>
-    <p>{currentFact}</p>
-    <button on:click={generateNewFact}>Generate New Fact</button>
+    <ul>
+        {#each currentFacts as fact}
+            <li>{fact}</li>
+        {/each}
+    </ul>
+    <button on:click={generateNewFacts}>Generate New Facts</button>
 </div>
