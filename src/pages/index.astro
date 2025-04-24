@@ -1,47 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import BentoCard from '../components/BentoCard.astro'
+import Intro from '../components/cards/IntroCard.astro';
+import Programming from '../components/cards/ProgrammingCard.astro';
+import Photography from '../components/cards/PhotographyCard.astro';
+import Volunteering from '../components/cards/VolunteeringCard.astro';
+import Academics from "../components/cards/AcademicsCard.astro";
+import Writing from "../components/cards/WritingCard.astro";
+import Facts from "../components/cards/FactsCard.astro";
+import Legal from "../components/cards/LegalCard.astro";
 ---
 
 <Layout>
     <div class="max-w-7xl mx-auto p-6 grid grid-cols-1 grid-gap-4 md:grid-cols-3 lg:grid-cols-4">
-        <BentoCard colSpan="md:col-span-3" classes="text-lg">
-            <p>
-                Hey there! I'm <strong>Ben Soyka</strong>, an undergraduate student with
-                a strange range of interests.
-            </p>
-        </BentoCard>
-        <BentoCard title="Computer science" rowSpan="md:row-span-2 lg:row-span-1">
-
-        </BentoCard>
-        <BentoCard title="Photography" rowSpan="md:row-span-2">
-            <p>
-                I run a small photography business—you can see more at <a
-                    href="https://photos.bsoyka.me">photos.bsoyka.me</a>.
-            </p>
-        </BentoCard>
-        <BentoCard title="Volunteering">
-            <p>
-                I like to help out in the world, both in person and online!
-            </p>
-        </BentoCard>
-        <BentoCard title="Academics">
-            <p>
-                At the <a href="https://twin-cities.umn.edu/">University of
-                Minnesota</a>, I'm pursuing a bachelor's degree in computer science and
-                plan to graduate in 2028.
-            </p>
-        </BentoCard>
-        <BentoCard title="Writing">
-            <p>
-                You can find some of my work published on <a
-                    href="https://medium.bsoyka.me">Medium</a>.
-            </p>
-        </BentoCard>
-        <!--<BentoCard title="Fun facts" colSpan="lg:col-span-2">-->
-        <!--</BentoCard>-->
-        <BentoCard colSpan="md:col-span-2 lg:col-span-3" classes="text-sm">
-            &copy; 2025 Ben Soyka. Some rights reserved.
-        </BentoCard>
+        <Intro/>
+        <Programming/>
+        <Photography/>
+        <Volunteering/>
+        <Academics/>
+        <Writing/>
+        <Facts/>
+        <Legal/>
     </div>
 </Layout>
