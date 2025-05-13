@@ -31,10 +31,10 @@
 </script>
 
 <div>
-    <ul>
+    <ul class="my-2">
         {#each currentFacts as fact}
-            <li>{fact}</li>
+            <li class="max-w p-2 border border-gray-200 rounded-lg">{@html fact}</li>
         {/each}
     </ul>
-    <button on:click={generateNewFacts}>Generate New Facts</button>
+    <button class="btn-primary" on:click={generateNewFacts}>Generate New Facts</button>
 </div>

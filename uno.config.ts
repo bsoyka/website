@@ -16,5 +16,8 @@ export default defineConfig({
         }, font: {
             sans: "Space Grotesk, sans-serif"
         }
+    },
+    shortcuts: {
+        "btn-primary": "p-2.5 bg-primary color-white rounded-lg shadow-sm hover:shadow-lg"
     }
 })
