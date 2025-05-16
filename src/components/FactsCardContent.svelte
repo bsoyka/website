@@ -31,7 +31,7 @@
 </script>
 
 <div>
-    <ul class="my-2">
+    <ul class="my-2" id="facts">
         {#each currentFacts as fact}
             <li class="max-w p-2 border border-gray-200 rounded-lg">{@html fact}</li>
         {/each}

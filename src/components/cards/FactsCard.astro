@@ -38,3 +38,27 @@ if (response.ok) {
 <BentoCard title="Fun facts" colSpan="lg:col-span-2">
     <FactsCardContent client:load {facts}/>
 </BentoCard>
+
+<script>
+    import {animate} from 'motion';
+
+    const onPageLoad = () => {
+        const cardsContainer = document.querySelector('#facts');
+        if (cardsContainer) {
+            const cards = Array.from(cardsContainer.children);
+            cards.forEach((card, index) => {
+                animate(card, {
+                    opacity: [0, 1],
+                    transform: ['translateX(40px)', 'translateX(0)']
+                }, {
+                    duration: 0.5,
+                    delay: 0.9 + index * 0.1,
+                });
+            });
+        }
+    };
+
+    if (typeof window !== 'undefined') {
+        window.addEventListener('load', onPageLoad);
+    }
+</script>
