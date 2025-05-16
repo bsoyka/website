@@ -1,5 +1,6 @@
 ---
 import BentoCard from "../BentoCard.astro";
+import {Image} from 'astro:assets';
 import profilePhoto from "../../assets/profile-photo.jpg";
 ---
 
@@ -9,11 +10,13 @@ import profilePhoto from "../../assets/profile-photo.jpg";
             Hey there! I'm <strong>Ben Soyka</strong>, an undergraduate student with
             a strange range of interests.
         </p>
-        <div class="w-32 h-32 rounded-lg overflow-hidden mt-4 md:mt-0 md:ml-4">
-            <img
-                    src={profilePhoto.src}
+        <div class="rounded-lg overflow-hidden mt-4 md:mt-0 md:ml-4">
+            <Image
+                    src={profilePhoto}
                     alt="Profile photo of Ben Soyka"
                     class="h-full w-full object-cover"
+                    width="128"
+                    height="128"
             />
         </div>
     </div>
