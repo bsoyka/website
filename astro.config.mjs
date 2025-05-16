@@ -1,6 +1,6 @@
 // @ts-check
 import {defineConfig} from 'astro/config';
-
+import cloudflare from '@astrojs/cloudflare';
 import UnoCSS from 'unocss/astro';
 import svelte from '@astrojs/svelte';
 
@@ -11,5 +11,7 @@ export default defineConfig({
             injectReset: true
         }),
         svelte()
-    ]
+    ],
+
+    adapter: cloudflare()
 });
