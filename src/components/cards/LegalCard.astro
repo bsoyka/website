@@ -1,8 +1,15 @@
 ---
 import BentoCard from "../BentoCard.astro";
+
+interface Props {
+    colSpan?: string;
+    classes?: string;
+}
+
+const { colSpan, classes = "text-sm" } = Astro.props;
 ---
 
-<BentoCard classes="text-sm">
+<BentoCard classes={classes} colSpan={colSpan}>
     <ul>
         <li>&copy; 2025 Ben Soyka. Some rights reserved.</li>
         <li><a href="https://bsoyka.me/privacy">Privacy policy</a></li>
