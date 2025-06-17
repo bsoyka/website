@@ -15,9 +15,31 @@ const { image, imageAlt, title, link } = Astro.props;
 
 {link ? (
 <a href={link}>
-    <BentoCard classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
+    <BentoCard classes="hover:scale-105 transition-transform duration-200">
+        <div class="flex items-center gap-4">
+            {image && (
+                    <div class="flex-shrink-0 rounded-lg overflow-hidden">
+                        <Image
+                                src={image}
+                                alt={imageAlt || `${title} logo`}
+                                class="h-48px w-48px object-cover"
+                                width="96"
+                                height="96"
+                        />
+                    </div>
+            )}
+            <div class="flex flex-col min-w-0">
+                <span class="text-lg font-medium">{title}</span>
+                <slot />
+            </div>
+        </div>
+    </BentoCard>
+</a>
+    ) : (
+<BentoCard classes="hover:scale-105 transition-transform duration-200">
+    <div class="flex items-center gap-4">
         {image && (
-                <div class="rounded-lg overflow-hidden">
+                <div class="flex-shrink-0 rounded-lg overflow-hidden">
                     <Image
                             src={image}
                             alt={imageAlt || `${title} logo`}
@@ -27,24 +49,10 @@ const { image, imageAlt, title, link } = Astro.props;
                     />
                 </div>
         )}
-        <span class="text-lg">{title}</span>
-        <slot />
-    </BentoCard>
-</a>
-    ) : (
-<BentoCard classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
-    {image && (
-            <div class="rounded-lg overflow-hidden">
-                <Image
-                        src={image}
-                        alt={imageAlt || `${title} logo`}
-                        class="h-48px w-48px object-cover"
-                        width="96"
-                        height="96"
-                />
-            </div>
-    )}
-    <span class="text-lg">{title}</span>
-    <slot />
+        <div class="flex flex-col min-w-0">
+            <span class="text-lg font-medium">{title}</span>
+            <slot />
+        </div>
+    </div>
 </BentoCard>
     )}
