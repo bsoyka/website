@@ -1,5 +1,10 @@
 # [bsoyka.me](https://bsoyka.me)
 
+![Website status](https://img.shields.io/website?url=https%3A%2F%2Fbsoyka.me)
+![GitHub License](https://img.shields.io/github/license/bsoyka/website)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/bsoyka/website)
+![GitHub issues](https://img.shields.io/github/issues/bsoyka/website)
+
 This is the source code for my personal website, hosted at [bsoyka.me](https://bsoyka.me).
 
 My site is built on [Astro](https://astro.build/) and Svelte, styled with [UnoCSS](https://unocss.dev/) and [Motion](https://motion.dev/), and deployed with [Cloudflare Workers](https://workers.cloudflare.com/).
