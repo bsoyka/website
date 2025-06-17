@@ -1,9 +1,9 @@
 # [bsoyka.me](https://bsoyka.me)
 
-![Website status](https://img.shields.io/website?url=https%3A%2F%2Fbsoyka.me)
-![GitHub License](https://img.shields.io/github/license/bsoyka/website)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/bsoyka/website)
-![GitHub issues](https://img.shields.io/github/issues/bsoyka/website)
+[![Website status](https://img.shields.io/website?url=https%3A%2F%2Fbsoyka.me)](https://bsoyka.me)
+[![GitHub License](https://img.shields.io/github/license/bsoyka/website)](LICENSE)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/m/bsoyka/website)](https://github.com/bsoyka/website/commits/main/)
+[![GitHub issues](https://img.shields.io/github/issues/bsoyka/website)](https://github.com/bsoyka/website/issues/)
 
 This is the source code for my personal website, hosted at [bsoyka.me](https://bsoyka.me).
 
