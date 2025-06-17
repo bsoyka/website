@@ -15,24 +15,41 @@ import LegalCard from "../components/cards/LegalCard.astro";
 
         <a href="imessage:hello@bsoyka.me?body=Tap%20the%20%2B%20icon%20and%20select%20Apple%20Cash%20to%20make%20your%20payment.%20You%20can%20delete%20or%20replace%20this%20text.">
             <BentoCard
-                    classes="hover:scale-105 transition-transform duration-200 flex items-center justify-center gap-3">
+                    classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
                 <span class="text-lg">Apple Cash</span>
+                <code class="text-sm text-gray-600">hello@bsoyka.me</code>
             </BentoCard>
         </a>
 
         <a href="https://cash.app/$bsoyka">
             <BentoCard
-                    classes="hover:scale-105 transition-transform duration-200 flex items-center justify-center gap-3">
+                    classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
                 <span class="text-lg">Cash App</span>
+                <code class="text-sm text-gray-600">$bsoyka</code>
+            </BentoCard>
+        </a>
+
+        <a href="https://paypal.me/BSoyka">
+            <BentoCard
+                    classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
+                <span class="text-lg">PayPal</span>
+                <code class="text-sm text-gray-600">@BSoyka</code>
             </BentoCard>
         </a>
 
         <a href="https://venmo.com/bsoyka">
             <BentoCard
-                    classes="hover:scale-105 transition-transform duration-200 flex items-center justify-center gap-3">
+                    classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
                 <span class="text-lg">Venmo</span>
+                <code class="text-sm text-gray-600">@bsoyka</code>
             </BentoCard>
         </a>
+
+        <BentoCard
+                classes="hover:scale-105 transition-transform duration-200 flex flex-col items-center text-center gap-2">
+            <span class="text-lg">Zelle</span>
+            <code class="text-sm text-gray-600">hello@bsoyka.me</code>
+        </BentoCard>
 
         <LegalCard colSpan="md:col-span-2" />
     </div>
