@@ -7,7 +7,7 @@
 
 This is the source code for my personal website, hosted at [bsoyka.me](https://bsoyka.me).
 
-My site is built on [Astro](https://astro.build/) and Svelte, styled with [UnoCSS](https://unocss.dev/) and [Motion](https://motion.dev/), and deployed with [Cloudflare Workers](https://workers.cloudflare.com/).
+My site is built on [Astro](https://astro.build/) and [Svelte](https://svelte.dev/), styled with [UnoCSS](https://unocss.dev/) and [Motion](https://motion.dev/), and deployed with [Cloudflare Workers](https://workers.cloudflare.com/).
 I use a card-based design system loosely based on the containers in a [bento box](https://en.wikipedia.org/wiki/Bento).
 Notably, my site is mobile-first, with a heavy focus on responsive and accessible design for all screen sizes.
 
