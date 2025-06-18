@@ -1,16 +1,16 @@
 ---
 import BentoCard from "./BentoCard.astro";
-import { Image } from "astro:assets";
-import type { ImageMetadata } from "astro";
+import {Image} from "astro:assets";
+import type {ImageMetadata} from "astro";
 
 interface Props {
     image?: ImageMetadata;
     imageAlt?: string;
     title: string;
     link?: string;
-    }
+}
 
-const { image, imageAlt, title, link } = Astro.props;
+const {image, imageAlt, title, link} = Astro.props;
 ---
 
 {link ? (
@@ -26,11 +26,10 @@ const { image, imageAlt, title, link } = Astro.props;
                                 width="96"
                                 height="96"
                         />
-                    </div>
-            )}
+                    </div>)}
             <div class="flex flex-col min-w-0">
                 <span class="text-lg font-medium">{title}</span>
-                <slot />
+                <slot/>
             </div>
         </div>
     </BentoCard>
@@ -47,11 +46,10 @@ const { image, imageAlt, title, link } = Astro.props;
                             width="96"
                             height="96"
                     />
-                </div>
-        )}
+                </div>)}
         <div class="flex flex-col min-w-0">
             <span class="text-lg font-medium">{title}</span>
-            <slot />
+            <slot/>
         </div>
     </div>
 </BentoCard>

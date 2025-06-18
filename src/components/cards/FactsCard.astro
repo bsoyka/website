@@ -48,11 +48,9 @@ if (response.ok) {
             const cards = Array.from(cardsContainer.children);
             cards.forEach((card, index) => {
                 animate(card, {
-                    opacity: [0, 1],
-                    transform: ['translateX(40px)', 'translateX(0)']
+                    opacity: [0, 1], transform: ['translateX(40px)', 'translateX(0)']
                 }, {
-                    duration: 0.5,
-                    delay: 0.9 + index * 0.1,
+                    duration: 0.5, delay: 0.9 + index * 0.1,
                 });
             });
         }
