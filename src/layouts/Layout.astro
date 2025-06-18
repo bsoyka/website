@@ -1,46 +1,56 @@
+---
+import {type HTMLAttributes} from 'astro/types';
+
+interface Props extends HTMLAttributes<'html'> {
+    title?: string;
+}
+
+const {title = "Ben Soyka", ...attrs} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" {...attrs}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="generator" content={Astro.generator}/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ben Soyka</title>
+    <title>{title}</title>
     {import.meta.env.PROD && (<script is:inline data-goatcounter="https://bsoyka.goatcounter.com/count" async
         src="//gc.zgo.at/count.js"></script>)}
 </head>
 <body class="bg-light color-dark font-sans">
-<slot />
+    <slot />
 </body>
 </html>
 
 <style is:global lang="scss">
-  p + p {
+p + p {
     margin-top: 0.75em;
-  }
+}
 
-  li + li {
+li + li {
     margin-top: 0.5em;
-  }
+}
 
-  a {
+a {
     position: relative;
     color: #507dbc !important;
 
     &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 0.1em;
-      background-color: #507dbc;
-      transition: width 0.3s ease;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0.1em;
+        background-color: #507dbc;
+        transition: width 0.3s ease;
     }
 
     &:hover::after {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 </style>

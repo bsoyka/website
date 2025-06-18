@@ -11,7 +11,7 @@ import zelleLogo from '../assets/zelle-logo.png';
 import CardAnimation from "../components/CardAnimation.svelte";
 ---
 
-<Layout>
+<Layout title="Payment Methods — Ben Soyka">
     <div class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2"
          id="cards" data-animate-cards>
         <BentoCard classes="text-lg" colSpan="md:col-span-2">
@@ -76,7 +76,7 @@ import CardAnimation from "../components/CardAnimation.svelte";
             </p>
         </BentoCard>
 
-        <LegalCard colSpan="md:col-span-2" />
+        <LegalCard colSpan="md:col-span-2"/>
     </div>
 </Layout>
-<CardAnimation client:load />
+<CardAnimation client:load/>

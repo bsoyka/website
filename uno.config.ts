@@ -5,19 +5,16 @@ export default defineConfig({
         provider: 'bunny', // Privacy-friendly Google Fonts alternative
         fonts: {
             sans: {
-                name: 'Space Grotesk',
-                weights: [300, 400, 500, 600, 700]
+                name: 'Space Grotesk', weights: [300, 400, 500, 600, 700]
             }
         },
-    })],
-    theme: {
+    })], theme: {
         colors: {
             primary: "#507dbc", secondary: "#51b0bd", light: "#f4f9f9", dark: "#04080f"
         }, font: {
             sans: "Space Grotesk, sans-serif"
         }
-    },
-    shortcuts: {
+    }, shortcuts: {
         "btn-primary": "p-2.5 bg-primary color-white rounded-lg shadow-sm hover:shadow-lg"
     }
 })
