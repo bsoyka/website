@@ -1,9 +1,8 @@
----
----
-<script type="module">
-    import {animate} from 'motion';
+<script>
+    import { onMount } from 'svelte';
+    import { animate } from 'motion';
 
-    const animateCards = (containerId: string) => {
+    const animateCards = (containerId) => {
         const cardsContainer = document.querySelector(`#${containerId}`);
         if (cardsContainer) {
             const cards = Array.from(cardsContainer.children);
@@ -19,8 +18,10 @@
         }
     };
 
-    const containers = document.querySelectorAll('[data-animate-cards]');
-    containers.forEach(container => {
-        animateCards(container.id);
+    onMount(() => {
+        const containers = document.querySelectorAll('[data-animate-cards]');
+        containers.forEach(container => {
+            animateCards(container.id);
+        });
     });
 </script>
