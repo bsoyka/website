@@ -8,11 +8,12 @@ import Academics from "../components/cards/AcademicsCard.astro";
 import Writing from "../components/cards/WritingCard.astro";
 import Facts from "../components/cards/FactsCard.astro";
 import Legal from "../components/cards/LegalCard.astro";
+import CardAnimation from '../components/CardAnimation.astro';
 ---
 
 <Layout>
     <div class="max-w-7xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4"
-         id="cards">
+         id="cards" data-animate-cards>
         <Intro/>
         <Programming/>
         <Photography/>
@@ -23,27 +24,4 @@ import Legal from "../components/cards/LegalCard.astro";
         <Legal/>
     </div>
 </Layout>
-
-<script>
-    import {animate} from 'motion';
-
-    const onPageLoad = () => {
-        const cardsContainer = document.querySelector('#cards');
-        if (cardsContainer) {
-            const cards = Array.from(cardsContainer.children);
-            cards.forEach((card, index) => {
-                animate(card, {
-                    opacity: [0, 1],
-                    transform: ['translateY(20px)', 'translateY(0)']
-                }, {
-                    duration: 0.5,
-                    delay: index * 0.1,
-                });
-            });
-        }
-    };
-
-    if (typeof window !== 'undefined') {
-        window.addEventListener('load', onPageLoad);
-    }
-</script>
+<CardAnimation />
