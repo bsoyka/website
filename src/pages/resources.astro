@@ -5,13 +5,57 @@ import LegalCard from '../components/cards/LegalCard.astro';
 ---
 
 <Layout>
-    <div class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 grid-gap-4 md:grid-cols-2"
+    <div class="max-w-4xl mx-auto p-3 md:p-6 grid grid-cols-1 grid-gap-4 md:grid-cols-2 lg:grid-cols-3"
          id="cards">
-        <BentoCard classes="text-lg" colSpan="md:col-span-2">
+        <BentoCard colSpan="md:col-span-2 lg:col-span-3">
             <h1 class="text-3xl font-bold">Mental Health Resources</h1>
+            <p>This list of free resources is maintained for anyone in the United States either needing support during a personal crisis, or who knows someone who may need that support. Give someone a link to this page if you believe it could help them.</p>
+            <p>If you are not in the United States, the Wikimedia Foundation maintains <a href="https://meta.wikimedia.org/wiki/Mental_health_resources">a great list of international resources</a>.</p>
         </BentoCard>
 
-        <LegalCard colSpan="md:col-span-2"/>
+        <BentoCard title="988 Suicide and Crisis Lifeline" colSpan="md:col-span-2">
+            <p>
+                The national suicide and crisis lifeline can be reached by <a href="tel:988">call</a> or <a href="sms:988">text</a> at 988, or online at <a href="https://chat.988lifeline.org/">chat.988lifeline.org</a>.
+            </p>
+
+            <p>
+                Spanish speakers can call <a href="tel:+18886289454">1-800-628-9454</a>.
+            </p>
+
+            <p>
+                Deaf and hard-of-hearing people can dial 711 to reach a TRS communications assistant, followed by 988.
+            </p>
+        </BentoCard>
+
+        <BentoCard title="Veterans Crisis Line">
+            <p>
+                Veterans in crisis and their families and friends can be connected with qualified Department of Veterans Affairs responders by calling <a href="tel:988">988</a> and pressing 1, texting <a href="sms:838255">838-255</a>, or chatting online at <a href="https://www.veteranscrisisline.net/get-help-now/chat/">veteranscrisisline.net</a>.
+            </p>
+        </BentoCard>
+
+        <BentoCard title="Crisis Text Line">
+            <p>
+                The Crisis Text Line can be reached at <a href="sms:741741">741-741</a>, or by WhatsApp at <a href="https://wa.me/14437877678?text=HELLO&lang=en">1-443-787-7678</a>.
+            </p>
+        </BentoCard>
+
+        <BentoCard title="Disaster Distress Helpline" colSpan="lg:col-span-2">
+            <p>
+                The Substance Abuse and Mental Health Services Administration (a government agency) operates the Disaster Distress Helpline, which can be reached by calling or texting <a href="tel:+18009855990">1-800-985-5990</a>.
+            </p>
+
+            <p>
+                Spanish speakers can call and press 2, and deaf and hard-of-hearing people can reach out through <a href="https://vibrant.aslnow.io/app/8/10004">ASL Now</a>.
+            </p>
+        </BentoCard>
+
+        <BentoCard title="The Trevor Project" colSpan="lg:col-span-2">
+            <p>
+                For LGBTQ young people, the Trevor Project can be reached by phone at <a href="tel:+18664887386">1-866-488-7386</a>, by texting <a href="sms:678678?body=START">START to 678-678</a>, or by chatting online at <a href="https://www.thetrevorproject.org/get-help/">thetrevorproject.org</a>.
+            </p>
+        </BentoCard>
+
+        <LegalCard colSpan="md:col-span-2 lg:col-span-1"/>
     </div>
 </Layout>
 
@@ -19,13 +63,6 @@ import LegalCard from '../components/cards/LegalCard.astro';
     h1 {
         width: 100%;
         border-bottom: #51b0bd solid 0.15em;
-        padding-bottom: 0.2em;
-        margin-bottom: 0.2em;
-    }
-
-    h2 {
-        width: 100%;
-        border-bottom: #51b0bd solid 0.065em;
         padding-bottom: 0.2em;
         margin-bottom: 0.2em;
     }
