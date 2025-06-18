@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BentoCard from "../components/BentoCard.astro";
+import LegalCard from '../components/cards/LegalCard.astro';
+---
+
+<Layout>
+    <div class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 grid-gap-4 md:grid-cols-2"
+         id="cards">
+        <BentoCard classes="text-lg" colSpan="md:col-span-2">
+            <h1 class="text-3xl font-bold">Mental Health Resources</h1>
+        </BentoCard>
+
+        <LegalCard colSpan="md:col-span-2"/>
+    </div>
+</Layout>
+
+<style>
+    h1 {
+        width: 100%;
+        border-bottom: #51b0bd solid 0.15em;
+        padding-bottom: 0.2em;
+        margin-bottom: 0.2em;
+    }
+
+    h2 {
+        width: 100%;
+        border-bottom: #51b0bd solid 0.065em;
+        padding-bottom: 0.2em;
+        margin-bottom: 0.2em;
+    }
+</style>
