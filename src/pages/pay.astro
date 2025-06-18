@@ -8,11 +8,12 @@ import cashAppLogo from '../assets/cash-app-logo.svg';
 import paypalLogo from '../assets/paypal-logo.webp';
 import venmoLogo from '../assets/venmo-logo.png';
 import zelleLogo from '../assets/zelle-logo.png';
+import CardAnimation from "../components/CardAnimation.svelte";
 ---
 
 <Layout>
     <div class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2"
-         id="cards">
+         id="cards" data-animate-cards>
         <BentoCard classes="text-lg" colSpan="md:col-span-2">
             <strong>Hello! I try to be flexible with payment methods.</strong>
             Any of the following works great for me—pick whichever is most convenient
@@ -78,3 +79,4 @@ import zelleLogo from '../assets/zelle-logo.png';
         <LegalCard colSpan="md:col-span-2" />
     </div>
 </Layout>
+<CardAnimation client:load />

@@ -2,11 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import BentoCard from "../components/BentoCard.astro";
 import LegalCard from '../components/cards/LegalCard.astro';
+import CardAnimation from "../components/CardAnimation.svelte";
 ---
 
 <Layout>
     <div class="max-w-4xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
-         id="cards">
+         id="cards" data-animate-cards>
         <BentoCard colSpan="md:col-span-2 lg:col-span-3">
             <h1 class="text-3xl font-bold">Mental Health Resources</h1>
             <p>This list of free resources is maintained for anyone in the United States either needing support during a personal crisis, or who knows someone who may need that support. Give someone a link to this page if you believe it could help them.</p>
@@ -58,6 +59,7 @@ import LegalCard from '../components/cards/LegalCard.astro';
         <LegalCard colSpan="md:col-span-2 lg:col-span-1"/>
     </div>
 </Layout>
+<CardAnimation client:load />
 
 <style>
     h1 {
