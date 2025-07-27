@@ -13,5 +13,9 @@ export default defineConfig({
         svelte()
     ],
 
-    adapter: cloudflare()
+    adapter: cloudflare(),
+
+    redirects: {
+        "/privacy": "https://github.com/bsoyka/policy/blob/main/privacy-policy.md",
+    }
 });
