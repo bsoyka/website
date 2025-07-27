@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# My preferred contact method for security issues
+Contact: mailto:hello@bsoyka.me
+Preferred-Languages: en-US
+
+# The expiration date of this policy.
+Expires: 2028-07-27T00:00:00.000Z
+
+# My PGP key, if you wish to encrypt communications with me
+Encryption: https://bsoyka.me/key.asc
+
+# The primary location of this document
+Canonical: https://bsoyka.me/security.txt
+
+# My security/vulnerability disclosure policy
+Policy: https://github.com/bsoyka/policy/blob/main/security-policy.md
+
+# Learn more about this file's format at https://securitytxt.org/
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCAAdFiEEDKfMFqZLaPMEjuj+pecm1aZSKOoFAmiGc9MACgkQpecm1aZS
+KOq51AwAx7p43gFh0U2cIav2Ll46QzZ0hurdU9waP1vnLNoDPmoZYVq+CjCY2cZT
+61ECsHlYGZN14oGnK/yOFxsoNUhVYhHG7qIrktVSQCV5vUIO4wPoTXz/bvmPbP2c
+Wa0DgGzv/UwhDltaQMEe9GdrWmdSQncFsRXCtfxaGINjy+xA4xbr/xDIpsvpvNRE
+s2qjrAOX0EI+Q/2gGHEzAbJY2aqU97a9mCo1JNmojsft3jl9pJXD083x3nj30qET
+9dY3W9g1H9MEHj3maxpZ4CrLloFH5IoCnvnyZnL5FuiFlLfhDH3QRTG9Eb1O1XZE
+0XK8aZ4NNqWjRmuw44fRw/W8yhUJDvqiHRV3U7oe9Zy9226DAkB2bBM9zQy/SdpS
+pJuVYBEtrhMShDcOZ4eqiIBLSvKaVCf1gCtdpOzjiQiAXrNrmaLYoZ825NWs9uTG
+2GaW/YradFn4m/LkGZYS+r6iP9bVBbaKdp6PF64NzkHJjmFeyumxns8+NdO76WUU
+qX4ngD+l
+=bZvB
+-----END PGP SIGNATURE-----
