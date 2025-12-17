@@ -1,4 +1,4 @@
-import {defineConfig, presetWebFonts, presetWind4} from 'unocss'
+import { defineConfig, presetWebFonts, presetWind4 } from 'unocss'
 
 export default defineConfig({
     presets: [presetWind4(), presetWebFonts({
@@ -18,6 +18,7 @@ export default defineConfig({
         }
     },
     shortcuts: {
-        "btn-primary": "p-2.5 bg-primary color-white rounded-lg shadow-sm hover:shadow-lg"
+        "btn-primary": "p-2.5 bg-primary color-white rounded-lg shadow-sm hover:shadow-lg",
+        "btn-primary-outline": "p-2.5 border border-primary color-primary rounded-lg shadow-sm hover:shadow-lg"
     }
 })
