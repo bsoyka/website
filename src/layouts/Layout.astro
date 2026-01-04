@@ -45,4 +45,10 @@ import PostHog from "../components/PostHog.astro";
       width: 100%;
     }
   }
+
+  // Hide cards initially to prevent flash before animation
+  [data-animate-cards] > * {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 </style>
