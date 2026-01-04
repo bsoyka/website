@@ -1,0 +1,43 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BentoCard from "../../components/BentoCard.astro";
+import LegalCard from "../../components/cards/LegalCard.astro";
+import PaymentMethodCard from "../../components/PaymentMethodCard.astro";
+import imessageLogo from "../../assets/imessage-logo.svg";
+import cashAppLogo from "../../assets/cash-app-logo.svg";
+import paypalLogo from "../../assets/paypal-logo.webp";
+import venmoLogo from "../../assets/venmo-logo.png";
+import zelleLogo from "../../assets/zelle-logo.png";
+import CardAnimation from "../../components/CardAnimation.svelte";
+---
+
+<Layout>
+    <div
+        class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2"
+        id="cards"
+        data-animate-cards
+    >
+        <BentoCard colSpan="md:col-span-2">
+            <p>
+                For photography-related payments, please reach out to me
+                directly. I'll provide an invoice link where you can pay using
+                any major credit or debit card, Apple Pay, Google Pay, or a bank
+                transfer.
+            </p>
+            <p class="text-sm text-gray-600">
+                I send invoices via Pixieset, and Stripe handles the payment
+                processing.
+            </p>
+
+            <p>
+                <a href="/pay"
+                    >&leftarrow; Not trying to pay for photography services? Go
+                    back.</a
+                >
+            </p>
+        </BentoCard>
+
+        <LegalCard colSpan="md:col-span-2" />
+    </div>
+</Layout>
+<CardAnimation client:load />

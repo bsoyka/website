@@ -1,81 +1,45 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 import BentoCard from "../components/BentoCard.astro";
 import LegalCard from "../components/cards/LegalCard.astro";
 import PaymentMethodCard from "../components/PaymentMethodCard.astro";
-import imessageLogo from '../assets/imessage-logo.svg';
-import cashAppLogo from '../assets/cash-app-logo.svg';
-import paypalLogo from '../assets/paypal-logo.webp';
-import venmoLogo from '../assets/venmo-logo.png';
-import zelleLogo from '../assets/zelle-logo.png';
+import imessageLogo from "../assets/imessage-logo.svg";
+import cashAppLogo from "../assets/cash-app-logo.svg";
+import paypalLogo from "../assets/paypal-logo.webp";
+import venmoLogo from "../assets/venmo-logo.png";
+import zelleLogo from "../assets/zelle-logo.png";
 import CardAnimation from "../components/CardAnimation.svelte";
 ---
 
 <Layout>
-    <div class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2"
-         id="cards" data-animate-cards>
+    <div
+        class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2"
+        id="cards"
+        data-animate-cards
+    >
         <BentoCard classes="text-lg" colSpan="md:col-span-2">
             <strong>Hello! I try to be flexible with payment methods.</strong>
-            Any of the following works great for me—pick whichever is most convenient
-            for you.
+            First, please select what you're trying to pay for.
         </BentoCard>
 
-        <PaymentMethodCard
-                link="imessage:hello@bsoyka.me?body=Tap%20the%20%2B%20icon%20and%20select%20Apple%20Cash%20to%20make%20your%20payment.%20You%20can%20delete%20or%20replace%20this%20text."
-                image={imessageLogo}
-                title="Apple Cash"
-        >
-            <code class="text-sm text-gray-600">hello@bsoyka.me</code>
+        <PaymentMethodCard link="/pay/photo" title="Photography services">
+            <p class="text-sm text-gray-600">Ben Soyka Photography</p>
+        </PaymentMethodCard>
+
+        <PaymentMethodCard link="/pay/tcrc" title="TCRotaract Club">
+            <p class="text-sm text-gray-600">Dues and donations</p>
         </PaymentMethodCard>
 
         <PaymentMethodCard
-                link="https://venmo.com/bsoyka"
-                deepLink="venmo://paycharge?txn=pay&recipients=bsoyka"
-                image={venmoLogo}
-                title="Venmo"
+            link="https://github.com/sponsors/bsoyka"
+            title="Open source donations"
         >
-            <code class="text-sm text-gray-600">@bsoyka</code>
+            <p class="text-sm text-gray-600">Via GitHub Sponsors</p>
         </PaymentMethodCard>
 
-        <PaymentMethodCard
-                link="https://cash.app/$bsoyka"
-                image={cashAppLogo}
-                title="Cash App"
-        >
-            <code class="text-sm text-gray-600">$bsoyka</code>
+        <PaymentMethodCard link="/pay/personal" title="Something else">
+            <p class="text-sm text-gray-600">All other personal payments</p>
         </PaymentMethodCard>
-
-        <PaymentMethodCard
-                image={zelleLogo}
-                title="Zelle"
-        >
-            <code class="text-sm text-gray-600">hello@bsoyka.me</code>
-        </PaymentMethodCard>
-
-        <PaymentMethodCard
-                link="https://paypal.me/BSoyka"
-                image={paypalLogo}
-                title="PayPal"
-        >
-            <code class="text-sm text-gray-600">@BSoyka</code>
-        </PaymentMethodCard>
-
-        <PaymentMethodCard title="Cash or checks">
-            <p class="text-sm text-gray-600">Payable to Benjamin Soyka</p>
-        </PaymentMethodCard>
-
-        <BentoCard colSpan="md:col-span-2">
-            <p>
-                <strong>For photography-related payments:</strong>
-                Reach out to me directly. I'll provide an invoice link where you can pay
-                using any major credit or debit card, Apple Pay, Google Pay, or a bank
-                transfer. While I can still accept the other payment methods listed
-                here, this simplifies my business recordkeeping.
-            </p>
-            <p class="text-sm text-gray-600">
-                I send invoices via Pixieset, and Stripe handles the payment processing.
-            </p>
-        </BentoCard>
 
         <LegalCard colSpan="md:col-span-2" />
     </div>

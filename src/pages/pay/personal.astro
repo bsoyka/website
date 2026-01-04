@@ -1,0 +1,69 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BentoCard from "../../components/BentoCard.astro";
+import LegalCard from "../../components/cards/LegalCard.astro";
+import PaymentMethodCard from "../../components/PaymentMethodCard.astro";
+import imessageLogo from "../../assets/imessage-logo.svg";
+import cashAppLogo from "../../assets/cash-app-logo.svg";
+import paypalLogo from "../../assets/paypal-logo.webp";
+import venmoLogo from "../../assets/venmo-logo.png";
+import zelleLogo from "../../assets/zelle-logo.png";
+import CardAnimation from "../../components/CardAnimation.svelte";
+---
+
+<Layout>
+    <div
+        class="max-w-xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2"
+        id="cards"
+        data-animate-cards
+    >
+        <BentoCard classes="text-lg" colSpan="md:col-span-2">
+            Any of the following payment methods works great for me—pick
+            whichever is most convenient for you.
+        </BentoCard>
+
+        <PaymentMethodCard
+            link="imessage:hello@bsoyka.me?body=Tap%20the%20%2B%20icon%20and%20select%20Apple%20Cash%20to%20make%20your%20payment.%20You%20can%20delete%20or%20replace%20this%20text."
+            image={imessageLogo}
+            title="Apple Cash"
+        >
+            <code class="text-sm text-gray-600">hello@bsoyka.me</code>
+        </PaymentMethodCard>
+
+        <PaymentMethodCard
+            link="https://venmo.com/bsoyka"
+            deepLink="venmo://paycharge?txn=pay&recipients=bsoyka"
+            image={venmoLogo}
+            title="Venmo"
+        >
+            <code class="text-sm text-gray-600">@bsoyka</code>
+        </PaymentMethodCard>
+
+        <PaymentMethodCard
+            link="https://cash.app/$bsoyka"
+            image={cashAppLogo}
+            title="Cash App"
+        >
+            <code class="text-sm text-gray-600">$bsoyka</code>
+        </PaymentMethodCard>
+
+        <PaymentMethodCard image={zelleLogo} title="Zelle">
+            <code class="text-sm text-gray-600">hello@bsoyka.me</code>
+        </PaymentMethodCard>
+
+        <PaymentMethodCard
+            link="https://paypal.me/BSoyka"
+            image={paypalLogo}
+            title="PayPal"
+        >
+            <code class="text-sm text-gray-600">@BSoyka</code>
+        </PaymentMethodCard>
+
+        <PaymentMethodCard title="Cash or checks">
+            <p class="text-sm text-gray-600">Payable to Benjamin Soyka</p>
+        </PaymentMethodCard>
+
+        <LegalCard colSpan="md:col-span-2" />
+    </div>
+</Layout>
+<CardAnimation client:load />
