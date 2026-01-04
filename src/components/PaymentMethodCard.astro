@@ -8,70 +8,74 @@ interface Props {
     imageAlt?: string;
     title: string;
     link?: string;
-    deepLink?: string
-    }
+    deepLink?: string;
+}
 
 const { image, imageAlt, title, link, deepLink } = Astro.props;
 ---
 
-{link ? (
-<a href={link} data-deep-link={deepLink} class="payment-link">
-    <BentoCard classes="hover:scale-105 transition-transform duration-200">
-        <div class="flex items-center gap-4">
-            {image && (
-                    <div class="flex-shrink-0 rounded-lg overflow-hidden">
-                        <Image
+{
+    link ? (
+        <a href={link} data-deep-link={deepLink} class="payment-link">
+            <BentoCard classes="hover:scale-105 transition-transform duration-200">
+                <div class="flex items-center gap-4">
+                    {image && (
+                        <div class="flex-shrink-0 rounded-lg overflow-hidden">
+                            <Image
                                 src={image}
                                 alt={imageAlt || `${title} logo`}
-                                class="h-48px w-48px object-cover"
+                                class="h-48px w-48px object-fit"
                                 width="96"
                                 height="96"
-                        />
+                            />
+                        </div>
+                    )}
+                    <div class="flex flex-col min-w-0">
+                        <span class="text-lg font-medium">{title}</span>
+                        <slot />
                     </div>
-            )}
-            <div class="flex flex-col min-w-0">
-                <span class="text-lg font-medium">{title}</span>
-                <slot />
-            </div>
-        </div>
-    </BentoCard>
-</a>
+                </div>
+            </BentoCard>
+        </a>
     ) : (
-<BentoCard>
-    <div class="flex items-center gap-4">
-        {image && (
-                <div class="flex-shrink-0 rounded-lg overflow-hidden">
-                    <Image
+        <BentoCard>
+            <div class="flex items-center gap-4">
+                {image && (
+                    <div class="flex-shrink-0 rounded-lg overflow-hidden">
+                        <Image
                             src={image}
                             alt={imageAlt || `${title} logo`}
-                            class="h-48px w-48px object-cover"
+                            class="h-48px w-48px object-fit"
                             width="96"
                             height="96"
-                    />
+                        />
+                    </div>
+                )}
+                <div class="flex flex-col min-w-0">
+                    <span class="text-lg font-medium">{title}</span>
+                    <slot />
                 </div>
-        )}
-        <div class="flex flex-col min-w-0">
-            <span class="text-lg font-medium">{title}</span>
-            <slot />
-        </div>
-    </div>
-</BentoCard>
-    )}
+            </div>
+        </BentoCard>
+    )
+}
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll<HTMLAnchorElement>('a.payment-link[data-deep-link]');
-        
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
+    document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll<HTMLAnchorElement>(
+            "a.payment-link[data-deep-link]",
+        );
+
+        links.forEach((link) => {
+            link.addEventListener("click", (e) => {
                 const deepLink = link.dataset.deepLink;
-                
+
                 if (deepLink) {
                     e.preventDefault();
-                    
+
                     // Try to open the deep link
                     window.location.href = deepLink;
-                    
+
                     // Fallback to web link after a short delay if deep link doesn't work
                     setTimeout(() => {
                         window.location.href = link.href;

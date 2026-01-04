@@ -3,11 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import BentoCard from "../components/BentoCard.astro";
 import LegalCard from "../components/cards/LegalCard.astro";
 import PaymentMethodCard from "../components/PaymentMethodCard.astro";
-import imessageLogo from "../assets/imessage-logo.svg";
-import cashAppLogo from "../assets/cash-app-logo.svg";
-import paypalLogo from "../assets/paypal-logo.webp";
-import venmoLogo from "../assets/venmo-logo.png";
-import zelleLogo from "../assets/zelle-logo.png";
+import photographyIcon from "../assets/photography-icon.svg";
+import rotaractLogo from "../assets/rotaract-logo.svg";
 import CardAnimation from "../components/CardAnimation.svelte";
 ---
 
@@ -22,11 +19,17 @@ import CardAnimation from "../components/CardAnimation.svelte";
             First, please select what you're trying to pay for.
         </BentoCard>
 
-        <PaymentMethodCard link="/pay/photo" title="Photography services">
-            <p class="text-sm text-gray-600">Ben Soyka Photography</p>
-        </PaymentMethodCard>
+        <PaymentMethodCard
+            link="/pay/photo"
+            image={photographyIcon}
+            title="Ben Soyka Photography"
+        />
 
-        <PaymentMethodCard link="/pay/tcrc" title="TCRotaract Club">
+        <PaymentMethodCard
+            link="/pay/tcrc"
+            image={rotaractLogo}
+            title="TCRotaract Club"
+        >
             <p class="text-sm text-gray-600">Dues and donations</p>
         </PaymentMethodCard>
 
