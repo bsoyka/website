@@ -8,13 +8,14 @@ interface Props {
     imageAlt?: string;
     title: string;
     link?: string;
+    deepLink?: string
     }
 
-const { image, imageAlt, title, link } = Astro.props;
+const { image, imageAlt, title, link, deepLink } = Astro.props;
 ---
 
 {link ? (
-<a href={link}>
+<a href={link} data-deep-link={deepLink} class="payment-link">
     <BentoCard classes="hover:scale-105 transition-transform duration-200">
         <div class="flex items-center gap-4">
             {image && (
@@ -56,3 +57,27 @@ const { image, imageAlt, title, link } = Astro.props;
     </div>
 </BentoCard>
     )}
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const links = document.querySelectorAll<HTMLAnchorElement>('a.payment-link[data-deep-link]');
+        
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const deepLink = link.dataset.deepLink;
+                
+                if (deepLink) {
+                    e.preventDefault();
+                    
+                    // Try to open the deep link
+                    window.location.href = deepLink;
+                    
+                    // Fallback to web link after a short delay if deep link doesn't work
+                    setTimeout(() => {
+                        window.location.href = link.href;
+                    }, 500);
+                }
+            });
+        });
+    });
+</script>
