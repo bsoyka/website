@@ -7,7 +7,7 @@ export const GET: APIRoute = async () => {
 
 You can also download this key in ASCII-armored format at https://bsoyka.me/key.asc.
 
-Find proof this key is mine at https://bsoyka.me/proof or https://keybase.io/bsoyka.
+Find proof this key is mine at https://bsoyka.me/proof.txt or https://keybase.io/bsoyka.
 
 ${keyAscContent}`,
         {
