@@ -24,6 +24,9 @@ async function initializeAssets() {
   await assetsPromise;
 }
 
+// TODO: Temporary workaround for Astro v6 beta issue:
+// https://github.com/withastro/astro/issues/15319
+// Remove this middleware once the issue is fixed in a stable Astro release.
 export const onRequest = defineMiddleware(async (ctx, next) => {
   if (ctx.url.pathname === "/_image") {
     await initializeAssets();
