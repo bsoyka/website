@@ -1,27 +1,30 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Intro from '../components/cards/IntroCard.astro';
-import Programming from '../components/cards/ProgrammingCard.astro';
-import Photography from '../components/cards/PhotographyCard.astro';
-import Volunteering from '../components/cards/VolunteeringCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Intro from "../components/cards/IntroCard.astro";
+import Programming from "../components/cards/ProgrammingCard.astro";
+import Photography from "../components/cards/PhotographyCard.astro";
+import Volunteering from "../components/cards/VolunteeringCard.astro";
 import Academics from "../components/cards/AcademicsCard.astro";
 import Writing from "../components/cards/WritingCard.astro";
 import Facts from "../components/cards/FactsCard.astro";
 import Legal from "../components/cards/LegalCard.astro";
-import CardAnimation from '../components/CardAnimation.svelte';
+import CardAnimation from "../components/CardAnimation.svelte";
 ---
 
 <Layout>
-    <div class="max-w-7xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4"
-         id="cards" data-animate-cards>
-        <Intro/>
-        <Programming/>
-        <Photography/>
-        <Volunteering/>
-        <Academics/>
-        <Writing/>
-        <Facts/>
-        <Legal/>
+    <div
+        class="max-w-7xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4"
+        id="cards"
+        data-animate-cards
+    >
+        <Intro />
+        <Programming />
+        <Photography />
+        <Volunteering />
+        <Academics />
+        <Writing />
+        <Facts />
+        <Legal />
     </div>
 </Layout>
 <CardAnimation client:load />

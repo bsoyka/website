@@ -19,7 +19,7 @@
         currentFacts = shuffledFacts.splice(0, 3); // Get the next 3 facts
     }
 
-    import {onMount} from "svelte";
+    import { onMount } from "svelte";
 
     onMount(() => {
         if (facts.length > 0) {
@@ -33,8 +33,12 @@
 <div>
     <ul class="my-2" id="facts">
         {#each currentFacts as fact}
-            <li class="max-w p-2 border border-gray-200 rounded-lg">{@html fact}</li>
+            <li class="max-w p-2 border border-gray-200 rounded-lg">
+                {@html fact}
+            </li>
         {/each}
     </ul>
-    <button class="btn-primary" on:click={generateNewFacts}>Generate New Facts</button>
+    <button class="btn-primary" on:click={generateNewFacts}
+        >Generate New Facts</button
+    >
 </div>

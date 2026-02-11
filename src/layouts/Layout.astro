@@ -1,54 +1,57 @@
 ---
 import PostHog from "../components/PostHog.astro";
 ---
+
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="generator" content={Astro.generator}/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ben Soyka</title>
-    {import.meta.env.PROD && (<PostHog />)}
-</head>
-<body class="bg-light color-dark font-sans">
-<slot />
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+        />
+        <meta name="generator" content={Astro.generator} />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Ben Soyka</title>
+        {import.meta.env.PROD && <PostHog />}
+    </head>
+    <body class="bg-light color-dark font-sans">
+        <slot />
+    </body>
 </html>
 
 <style is:global lang="scss">
-  p + p {
-    margin-top: 0.75em;
-  }
-
-  li + li {
-    margin-top: 0.5em;
-  }
-
-  a {
-    position: relative;
-    color: #507dbc !important;
-
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 0.1em;
-      background-color: #507dbc;
-      transition: width 0.3s ease;
+    p + p {
+        margin-top: 0.75em;
     }
 
-    &:hover::after {
-      width: 100%;
+    li + li {
+        margin-top: 0.5em;
     }
-  }
 
-  // Hide cards initially to prevent flash before animation
-  [data-animate-cards] > * {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    a {
+        position: relative;
+        color: #507dbc !important;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0.1em;
+            background-color: #507dbc;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    // Hide cards initially to prevent flash before animation
+    [data-animate-cards] > * {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 </style>
