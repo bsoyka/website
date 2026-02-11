@@ -1,24 +1,30 @@
 {
   "name": "website",
   "compatibility_date": "2025-05-16",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist"
+    "directory": "./dist",
   },
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "routes": [
     {
       "pattern": "bsoyka.me",
-      "custom_domain": true
+      "custom_domain": true,
     },
     {
       "pattern": "www.bsoyka.me",
-      "custom_domain": true
-    }
-  ]
+      "custom_domain": true,
+    },
+    {
+      "pattern": "bensoyka.com",
+      "custom_domain": true,
+    },
+    {
+      "pattern": "www.bensoyka.com",
+      "custom_domain": true,
+    },
+  ],
 }
