@@ -13,14 +13,12 @@ export default defineConfig({
         svelte()
     ],
 
-    adapter: cloudflare({
-        imageService: "passthrough",
-    }),
+    adapter: cloudflare(),
 
     redirects: {
         "/conduct": "https://github.com/bsoyka/policy/blob/main/code-of-conduct.md",
         "/privacy": "https://github.com/bsoyka/policy/blob/main/privacy-policy.md",
         "/security": "https://github.com/bsoyka/policy/blob/main/security-policy.md",
         "/pay/%C2%A0": "https://bsoyka.me/pay",
-    },
+    }
 });
