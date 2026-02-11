@@ -4,14 +4,10 @@ import { isRemotePath } from "@astrojs/internal-helpers/path";
 let assets:
   | { fetch: (req: Request | URL | string) => Promise<Response> }
   | undefined;
-let assetsInitialized = false;
-
 let assetsPromise: Promise<void> | undefined;
 
 async function initializeAssets() {
-  if (assetsInitialized) return;
-  
-  // Prevent race conditions by reusing the same promise
+  // Return the existing promise if initialization is in progress
   if (assetsPromise) {
     return assetsPromise;
   }
@@ -22,12 +18,10 @@ async function initializeAssets() {
       assets = (env as any).ASSETS;
     } catch {
       // Not running on Cloudflare (e.g. local preview)
-    } finally {
-      assetsInitialized = true;
     }
   })();
 
-  return assetsPromise;
+  await assetsPromise;
 }
 
 export const onRequest = defineMiddleware(async (ctx, next) => {
