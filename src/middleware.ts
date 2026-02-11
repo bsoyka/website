@@ -6,16 +6,28 @@ let assets:
   | undefined;
 let assetsInitialized = false;
 
+let assetsPromise: Promise<void> | undefined;
+
 async function initializeAssets() {
   if (assetsInitialized) return;
-  assetsInitialized = true;
-
-  try {
-    const { env } = await import("cloudflare:workers");
-    assets = (env as any).ASSETS;
-  } catch {
-    // Not running on Cloudflare (e.g. local preview)
+  
+  // Prevent race conditions by reusing the same promise
+  if (assetsPromise) {
+    return assetsPromise;
   }
+
+  assetsPromise = (async () => {
+    try {
+      const { env } = await import("cloudflare:workers");
+      assets = (env as any).ASSETS;
+    } catch {
+      // Not running on Cloudflare (e.g. local preview)
+    } finally {
+      assetsInitialized = true;
+    }
+  })();
+
+  return assetsPromise;
 }
 
 export const onRequest = defineMiddleware(async (ctx, next) => {
