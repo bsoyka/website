@@ -1,6 +1,16 @@
 import { defineMiddleware } from "astro:middleware";
 import { isRemotePath } from "@astrojs/internal-helpers/path";
 
+let assets:
+  | { fetch: (req: Request | URL | string) => Promise<Response> }
+  | undefined;
+try {
+  const { env } = await import("cloudflare:workers");
+  assets = (env as any).ASSETS;
+} catch {
+  // Not running on Cloudflare (e.g. local preview)
+}
+
 export const onRequest = defineMiddleware(async (ctx, next) => {
   if (ctx.url.pathname === "/_image") {
     const href = ctx.url.searchParams.get("href");
@@ -19,6 +29,11 @@ export const onRequest = defineMiddleware(async (ctx, next) => {
       return new Response("Forbidden", { status: 403 });
     }
 
+    if (assets) {
+      return assets.fetch(proxied);
+    }
+
+    // Fallback for local preview
     return fetch(proxied);
   }
 
