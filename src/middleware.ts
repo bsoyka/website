@@ -4,15 +4,30 @@ import { isRemotePath } from "@astrojs/internal-helpers/path";
 let assets:
   | { fetch: (req: Request | URL | string) => Promise<Response> }
   | undefined;
-try {
-  const { env } = await import("cloudflare:workers");
-  assets = (env as any).ASSETS;
-} catch {
-  // Not running on Cloudflare (e.g. local preview)
+let assetsPromise: Promise<void> | undefined;
+
+async function initializeAssets() {
+  // Return the existing promise if initialization is in progress
+  if (assetsPromise) {
+    return assetsPromise;
+  }
+
+  assetsPromise = (async () => {
+    try {
+      const { env } = await import("cloudflare:workers");
+      assets = (env as any).ASSETS;
+    } catch {
+      // Not running on Cloudflare (e.g. local preview)
+    }
+  })();
+
+  await assetsPromise;
 }
 
 export const onRequest = defineMiddleware(async (ctx, next) => {
   if (ctx.url.pathname === "/_image") {
+    await initializeAssets();
+
     const href = ctx.url.searchParams.get("href");
     if (!href) {
       return new Response("Missing 'href' query parameter", {
