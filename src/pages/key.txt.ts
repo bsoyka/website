@@ -1,13 +1,7 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import type { APIRoute } from 'astro';
+import keyAscContent from '../../public/key.asc?raw';
 
 export const GET: APIRoute = async () => {
-    const keyAscContent = fs.readFileSync(
-        path.join(process.cwd(), 'public', 'key.asc'),
-        'utf-8'
-    );
-
     return new Response(
         `This is a text version of my PGP public key, used to verify my identity and encrypt messages to me.
 
