@@ -7,7 +7,7 @@ export default defineConfig({
       provider: "bunny", // Privacy-friendly Google Fonts alternative
       fonts: {
         sans: {
-          name: "Space Grotesk",
+          name: "IBM Plex Sans",
           weights: [300, 400, 500, 600, 700],
         },
       },
@@ -21,7 +21,7 @@ export default defineConfig({
       dark: "#04080f",
     },
     font: {
-      sans: "Space Grotesk, sans-serif",
+      sans: "IBM Plex Sans, sans-serif",
     },
   },
   shortcuts: {
