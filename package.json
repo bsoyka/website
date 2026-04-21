@@ -11,7 +11,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "^13.0.0-beta.6",
     "@astrojs/svelte": "^8.0.0-beta.2",
-    "astro": "^6.0.0-beta.10",
+    "astro": "^6.1.8",
     "motion": "^12.34.0",
     "svelte": "^5.53.0",
     "typescript": "^5.9.3"
