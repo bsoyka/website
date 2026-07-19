@@ -2,8 +2,7 @@ import { defineMiddleware } from "astro:middleware";
 import { isRemotePath } from "@astrojs/internal-helpers/path";
 
 let assets:
-  | { fetch: (req: Request | URL | string) => Promise<Response> }
-  | undefined;
+  { fetch: (req: Request | URL | string) => Promise<Response> } | undefined;
 let assetsPromise: Promise<void> | undefined;
 
 async function initializeAssets() {
@@ -28,6 +27,15 @@ async function initializeAssets() {
 // https://github.com/withastro/astro/issues/15319
 // Remove this middleware once the issue is fixed in a stable Astro release.
 export const onRequest = defineMiddleware(async (ctx, next) => {
+  // Redirect bsoyka.me (and www.bsoyka.me) to the canonical domain bensoyka.com
+  if (
+    ctx.url.hostname === "bsoyka.me" ||
+    ctx.url.hostname === "www.bsoyka.me"
+  ) {
+    const canonical = new URL(ctx.url);
+    canonical.hostname = "bensoyka.com";
+    return Response.redirect(canonical.toString(), 301);
+  }
   if (ctx.url.pathname === "/_image") {
     await initializeAssets();
 

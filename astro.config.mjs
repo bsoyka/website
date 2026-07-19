@@ -20,6 +20,6 @@ export default defineConfig({
     "/privacy": "https://github.com/bsoyka/policy/blob/main/privacy-policy.md",
     "/security":
       "https://github.com/bsoyka/policy/blob/main/security-policy.md",
-    "/pay/%C2%A0": "https://bsoyka.me/pay",
+    "/pay/%C2%A0": "https://bensoyka.com/pay",
   },
 });
