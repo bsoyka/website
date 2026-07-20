@@ -1,5 +1,6 @@
 <script>
-    export let facts = null;
+    let facts = null;
+    let loading = true;
 
     let shuffledFacts = [];
     let currentFacts = [];
@@ -16,21 +17,40 @@
             shuffleArray(facts);
             shuffledFacts = [...facts];
         }
-        currentFacts = shuffledFacts.splice(0, 3); // Get the next 3 facts
+        currentFacts = shuffledFacts.splice(0, 3);
     }
 
     import { onMount } from "svelte";
 
-    onMount(() => {
-        if (facts && facts.length > 0) {
-            shuffleArray(facts);
-            shuffledFacts = [...facts];
-            currentFacts = shuffledFacts.splice(0, 3); // Set the first 3 facts
+    onMount(async () => {
+        try {
+            const response = await fetch(
+                "https://statistician.bensoyka.com/public/facts",
+            );
+
+            if (response.ok) {
+                const data = await response.json();
+                facts = data.facts;
+
+                if (facts && facts.length > 0) {
+                    shuffleArray(facts);
+                    shuffledFacts = [...facts];
+                    currentFacts = shuffledFacts.splice(0, 3);
+                }
+            } else {
+                console.warn("Failed to fetch facts: non-OK response.");
+            }
+        } catch (e) {
+            console.warn("Failed to fetch facts:", e);
+        } finally {
+            loading = false;
         }
     });
 </script>
 
-{#if facts === null}
+{#if loading}
+    <p class="my-2 text-sm text-gray-500">Loading...</p>
+{:else if facts === null}
     <p class="my-2 text-sm text-gray-500">
         This card is unavailable right now, try again later.
     </p>
