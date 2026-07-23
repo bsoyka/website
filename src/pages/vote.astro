@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BentoCard from "../components/BentoCard.astro";
+import LegalCard from "../components/cards/LegalCard.astro";
+import CardAnimation from "../components/CardAnimation.svelte";
+---
+
+<Layout
+    title="Minnesota Voting"
+    description="Quick information about voting in Minnesota."
+>
+    <div
+        class="max-w-4xl mx-auto p-3 md:p-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+        id="cards"
+        data-animate-cards
+    >
+        <BentoCard colSpan="md:col-span-2 lg:col-span-3">
+            <h1 class="text-3xl font-bold">Minnesota Voting</h1>
+            <p>
+                I firmly believe everyone who can vote should vote! Local and national politics shape our lives, whether we like it or not, so your voice matters. Yes, your one vote matters.
+            </p>
+            <p>
+                This page contains some general information on voting in Minnesota. It is not all-encompassing and is not legal advice.
+            </p>
+        </BentoCard>
+
+        <BentoCard
+            title="Important dates in 2026"
+            colSpan="md:col-span-2 lg:col-span-1"
+        >
+            <ul>
+                <li><strong>June 26</strong>: Primary ballots start to be mailed</li>
+                <li><strong>July 28</strong>: Recommended last day to apply for a primary absentee ballot</li>
+                <li><strong>August 11</strong>: Last day to return a primary election ballot</li>
+
+                <li><strong>September 18</strong>: General ballots start to be mailed</li>
+                <li><strong>October 20</strong>: Recommended last day to apply for a general absentee ballot</li>
+                <li><strong>November 3</strong>: Last day to return a general election ballot</li>
+            </ul>
+        </BentoCard>
+
+        <BentoCard
+            title="Absentee process"
+            colSpan="md:col-span-2 lg:col-span-2"
+        >
+            <p>
+                If you're not able to vote in-person on election days (August 11 and November 3 this year), it's really easy to vote with an absentee ballot (by mail).
+            </p>
+
+            <ol>
+                <li><strong>Request a ballot</strong> <a href="https://sos.mn.gov/elections-voting/other-ways-to-vote/online-absentee-application/">online</a> or <a href="https://sos.mn.gov/media/2444/english-regular-absentee-ballot-application.pdf">by mail</a>.</li>
+                <li><strong>Track your ballot</strong> <a href="https://sos.mn.gov/elections-voting/other-ways-to-vote/track-your-ballot/">online</a> as it's mailed to you.</li>
+                <li><strong>Find a witness.</strong> It can be any adult who is a U.S. citizen, or a notary. (I'm a notary public in Minnesota and will gladly <a href="https://cal.com/bsoyka/notary">witness absentee ballot signings for free</a>.)</li>
+                <li><strong>Vote!</strong> Show your witness your blank ballot, then vote in private, sealing and signing the included envelopes as directed.</li>
+                <li><strong>Return your ballot</strong> by mail or in-person drop-off to the office that mailed it so it's received before the election day.</li>
+            </ol>
+        </BentoCard>
+
+        <LegalCard colSpan="md:col-span-2 lg:col-span-1" />
+    </div>
+</Layout>
+<CardAnimation client:load />
+
+<style>
+    h1 {
+        width: 100%;
+        border-bottom: #51b0bd solid 0.15em;
+        padding-bottom: 0.2em;
+        margin-bottom: 0.2em;
+    }
+</style>
