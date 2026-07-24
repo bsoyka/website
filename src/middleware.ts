@@ -27,6 +27,11 @@ async function initializeAssets() {
 // https://github.com/withastro/astro/issues/15319
 // Remove this middleware once the issue is fixed in a stable Astro release.
 export const onRequest = defineMiddleware(async (ctx, next) => {
+  // Detect Minnesota visitors via Cloudflare geolocation
+  const cf = (ctx.request as any).cf as { region?: string } | undefined;
+  if (cf?.region === "MN") {
+    ctx.request.headers.set("x-is-minnesota", "1");
+  }
   // Redirect bsoyka.me (and www.bsoyka.me) to the canonical domain bensoyka.com
   if (
     ctx.url.hostname === "bsoyka.me" ||

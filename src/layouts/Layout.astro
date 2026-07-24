@@ -8,6 +8,10 @@ interface Props {
 
 const { title, description } = Astro.props;
 
+const isMinnesota =
+    Astro.request.headers.get("x-is-minnesota") === "1" &&
+    Astro.url.pathname !== "/vote";
+
 const siteTitle = "Ben Soyka";
 const pageTitle = title ? `${title} — ${siteTitle}` : siteTitle;
 
@@ -44,6 +48,19 @@ const canonical = new URL(Astro.url.pathname, "https://bensoyka.com");
         {import.meta.env.PROD && <PostHog />}
     </head>
     <body class="bg-light color-dark font-sans">
+        {
+            isMinnesota && (
+                <div
+                    id="mn-banner"
+                    class="w-full bg-blue-600 text-white text-sm px-4 py-2 text-center"
+                >
+                    🗳️ Looks like you're in Minnesota!{" "}
+                    <a href="/vote" class="underline font-semibold text-white">
+                        You should make a plan to vote.
+                    </a>
+                </div>
+            )
+        }
         <slot />
     </body>
 </html>
@@ -57,7 +74,7 @@ const canonical = new URL(Astro.url.pathname, "https://bensoyka.com");
         margin-top: 0.5em;
     }
 
-    a {
+    a:not(#mn-banner a) {
         position: relative;
         color: #507dbc !important;
 
