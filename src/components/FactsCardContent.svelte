@@ -63,8 +63,17 @@
                 </li>
             {/each}
         </ul>
-        <button class="btn-primary" on:click={generateNewFacts}
-            >Generate New Facts</button
+        <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-2 gap-2"
         >
+            <button class="btn-primary" on:click={generateNewFacts}
+                >Generate New Facts</button
+            >
+            <p class="text-sm">
+                Yes, the facts with stats are up-to-date. <a
+                    href="https://gh.bsoyka.me/statistician">See how.</a
+                >
+            </p>
+        </div>
     </div>
 {/if}
