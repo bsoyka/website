@@ -1,7 +1,6 @@
 ---
 import BentoCard from "../BentoCard.astro";
 import { Image } from "astro:assets";
-import profilePhoto from "../../assets/profile-photo.jpg";
 ---
 
 <BentoCard colSpan="md:col-span-3" classes="text-lg">
@@ -11,13 +10,16 @@ import profilePhoto from "../../assets/profile-photo.jpg";
                 Hey there! I'm <strong>Ben Soyka</strong>, an undergraduate
                 computer science student always on plenty of side quests.
             </p>
-            <a class="btn-primary-outline" href="/cv.pdf">View CV</a>
+            <a
+                class="btn-primary-outline"
+                href="https://assets.bensoyka.com/doc/cv.pdf">View CV</a
+            >
         </div>
         <div
             class="rounded-lg overflow-hidden mt-4 md:mt-0 md:ml-4 w-32 h-32 shrink-0"
         >
             <Image
-                src={profilePhoto}
+                src="https://assets.bensoyka.com/photo/casual.jpg?s=128"
                 alt="Profile photo of Ben Soyka"
                 class="h-full w-full object-cover"
                 width="128"

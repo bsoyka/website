@@ -21,5 +21,7 @@ export default defineConfig({
     "/security":
       "https://github.com/bsoyka/policy/blob/main/security-policy.md",
     "/pay/%C2%A0": "https://bensoyka.com/pay",
+    "/assets/profile-photo.jpg": "https://assets.bensoyka.com/photo/casual.jpg",
+    "/cv.pdf": "https://assets.bensoyka.com/doc/cv.pdf"
   },
 });
