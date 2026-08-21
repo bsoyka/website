@@ -5,9 +5,9 @@ export const GET: APIRoute = async () => {
   return new Response(
     `This is a text version of my PGP public key, used to verify my identity and encrypt messages to me.
 
-You can also download this key in ASCII-armored format at https://bsoyka.me/key.asc.
+You can also download this key in ASCII-armored format at https://bensoyka.com/key.asc.
 
-Find proof this key is mine at https://bsoyka.me/proof.txt or https://keybase.io/bsoyka.
+Find proof this key is mine at https://bensoyka.com/proof.txt or https://keybase.io/bsoyka.
 
 ${keyAscContent}`,
     {
