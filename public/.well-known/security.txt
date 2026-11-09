@@ -1,0 +1,18 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+# Security contact for bensoyka.com and bsoyka.me.
+# Signed copy: public/.well-known/security.txt (see README).
+Contact: mailto:ben@bensoyka.com
+Expires: 2027-11-01T00:00:00.000Z
+Encryption: https://keys.bensoyka.com/pgp.asc
+Preferred-Languages: en
+Canonical: https://bensoyka.com/.well-known/security.txt
+Policy: https://github.com/bsoyka/policy/blob/main/security-policy.md
+-----BEGIN PGP SIGNATURE-----
+
+iHUEARYIAB0WIQTHuCbThVWvo65/ohbyAej6LXITnwUCavIarwAKCRDyAej6LXIT
+n1TOAQCse3KgbALmn1lOXcxgBMiIVQodJCk1UyHgw8tAf0DcXgD/dHqiNU2IKvqC
+4+COYhSsS6BR0jd77V+dwKy/3m8klAg=
+=XdyD
+-----END PGP SIGNATURE-----
