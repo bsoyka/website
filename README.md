@@ -17,3 +17,14 @@ Contributions are appreciated within reason. I want to showcase this project as 
 
 This repository is free to use under the terms of the MIT License, defined in the [`LICENSE`](LICENSE) file.
 For security, privacy, and contributor conduct policies, see my [Policy Center](https://gh.bsoyka.me/policy).
+
+## security.txt
+
+`public/.well-known/security.txt` is clearsigned with my PGP key. To change it, edit
+`security.txt.in`, then:
+
+```sh
+gpg --clearsign --output public/.well-known/security.txt security.txt.in
+```
+
+Keys themselves live at [keys.bensoyka.com](https://keys.bensoyka.com) ([bsoyka/keys](https://github.com/bsoyka/keys)).
