@@ -17,14 +17,6 @@
   },
   "routes": [
     {
-      "pattern": "bsoyka.me",
-      "custom_domain": true,
-    },
-    {
-      "pattern": "www.bsoyka.me",
-      "custom_domain": true,
-    },
-    {
       "pattern": "bensoyka.com",
       "custom_domain": true,
     },
