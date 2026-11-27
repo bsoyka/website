@@ -64,5 +64,11 @@
         api_host: "https://us.i.posthog.com",
         defaults: "2025-05-24",
         person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+        // No cookies or local/session storage; PostHog counts unique visitors
+        // with a server-side hash instead. Requires "Cookieless server hash
+        // mode" in PostHog project settings, or these events are dropped.
+        cookieless_mode: "always",
+        // Send nothing at all when the browser has Do Not Track turned on.
+        respect_dnt: true,
     });
 </script>
